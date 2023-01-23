@@ -1,0 +1,294 @@
+<div class="background">
+  <div class="card">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <h1>Responsive Registration Form</h1>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="input-group mb-4 px-3">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-envelope"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Email"
+            aria-label="Email"
+            aria-describedby="basic-addon1"
+            formControlName="email"
+          />
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('email')?.hasError('required') &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            email is required.
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('email')?.hasError('email') &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            please provide a proper email.
+          </small>
+        </div>
+        <div class="input-group mb-4 px-3">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-lock"></i
+          ></span>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            aria-label="Password"
+            aria-describedby="basic-addon1"
+            formControlName="password"
+          />
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('password')?.hasError('required') &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            password is required.
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('password')?.hasError('minlength') &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            password must be atleast 5 character.
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('password')?.hasError('maxlength') &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            password must be below 20 character.
+          </small>
+        </div>
+        <div class="input-group mb-4 px-3">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-lock"></i
+          ></span>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Re-type Password"
+            aria-label="Re-type Password"
+            aria-describedby="basic-addon1"
+            formControlName="confirmPassword"
+          />
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('confirmPassword')?.invalid &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            please confirm your password.
+          </small>
+        </div>
+        <div class="input-group mb-4 px-3 SHOW">
+          <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="First Name"
+            aria-label="First Name"
+            formControlName="firstname"
+            [ngClass]="{ gap: isValidFormSubmitted == null }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('firstname')?.invalid &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            first name is required.
+          </small>
+          <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Last Name"
+            aria-label="Last Name"
+            formControlName="lastname"
+          />
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('lastname')?.invalid &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            last name is required.
+          </small>
+        </div>
+        <div class="input-group mb-4 px-3 HIDE">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-user"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="First Name"
+            aria-label="First Name"
+            aria-describedby="basic-addon1"
+            formControlName="firstname"
+          />
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('firstname')?.invalid &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            first name is required.
+          </small>
+        </div>
+        <div class="input-group mb-4 px-3 HIDE">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-user"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Last Name"
+            aria-label="Last Name"
+            aria-describedby="basic-addon1"
+            formControlName="lastname"
+          />
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('lastname')?.invalid &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            last name is required.
+          </small>
+        </div>
+        <div class="input-group mb-3 px-3">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              value="Male"
+              id="flexRadioDefault1"
+              formControlName="gender"
+              checked
+            />
+            <label class="form-check-label" for="Male"> Male </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              value="Female"
+              id="flexRadioDefault2"
+              formControlName="gender"
+            />
+            <label class="form-check-label" for="Female"> Female </label>
+          </div>
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('gender')?.invalid &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            gender is required.
+          </small>
+        </div>
+        <div class="mx-3">
+          <select
+            class="form-select mt-4"
+            aria-label="Default select example"
+            formControlName="country"
+          >
+            <option selected>India</option>
+            <option value="1">India</option>
+            <option value="2">U.S.A</option>
+            <option value="3">Germany</option>
+            <option value="4">Canada</option>
+            <option value="5">Ireland</option>
+            <option value="6">England</option>
+            <option value="7">Australia</option>
+            <option value="8">South Africa</option>
+            <option value="9">Turkey</option>
+          </select>
+        </div>
+        <div class="form-check mt-4 mx-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="defaultCheck1"
+            formControlName="isAccepted"
+          />
+          <label class="form-check-label" for="defaultCheck1">
+            I agree with terms and conditions.
+          </label>
+          <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('isAccepted')?.invalid &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            accept terms and conditions
+          </small>
+        </div>
+        <div class="form-check mt-4 mx-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="defaultCheck2"
+            formControlName="isAccepted"
+          />
+          <label class="form-check-label" for="defaultCheck2">
+            I want to receive the newsletter.
+          </label>
+        </div>
+        <div class="mx-3">
+          <button type="submit" class="btn mt-4 mb-4">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

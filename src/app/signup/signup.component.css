@@ -1,0 +1,129 @@
+.background{
+    background-color: rgb(212, 205, 205);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 30vw;
+}
+
+.card-header{
+    background-color: rgb(255, 156, 27);
+    border: none;
+}
+
+.card-body{
+    padding: 0 20px;
+}
+
+h1{
+    padding: 1.5rem 2rem;
+    letter-spacing: 2px;
+    width: 28vw;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-check{
+    padding-right: 20px;
+}
+
+
+
+.gap{
+    margin: 0 2rem;
+}
+
+.form-control{
+    height: 40px;
+    color: #a5a5a5;
+}
+
+.form-select{
+    height: 48px;
+    color: #757575;
+}
+
+.btn{
+    width: 100%;
+    background-color: rgb(255, 156, 27);
+    color: white;
+}
+
+.HIDE{
+    display: none;
+}
+
+small{
+    display:block !important;
+    width: 100% !important;
+}
+
+@media only screen and (max-width:1630px){
+
+    .background{
+        background-color: rgb(212, 205, 205);
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .card{
+        width: 40vw;
+    }
+
+    h1{
+        padding: 1rem 1.5rem;
+        letter-spacing: 2px;
+        width: 38vw;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .gap{
+        margin: 0 1.5rem;
+    }
+}
+
+@media only screen and (max-width:1000px){
+
+    .background{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+
+    .card{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .card-body{
+        padding: 0;
+    }
+
+    h1{
+        width: 98vw;
+        font-size: 1.5rem;
+    }
+
+    .HIDE{
+        display: flex;
+    }
+
+    .SHOW{
+        display: none;
+    }
+
+}
+

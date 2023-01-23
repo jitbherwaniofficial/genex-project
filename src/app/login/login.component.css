@@ -1,0 +1,120 @@
+.background{
+    background-color: rgb(185, 79, 79);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 30vw;
+    border: none;
+    outline: none;
+}
+
+.card-body{
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
+h1{
+    width: 100%;
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: rgb(185, 79, 79);
+    letter-spacing: 2px;
+    padding: 0px 40px;
+    padding-top: 30px;
+}
+
+.input_box{
+    padding: 0 40px;
+}
+
+#email{
+    margin-top: 20px;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-bottom: 3px solid #a5a5a5;
+    color: #a5a5a5;
+    font-weight: 600;
+    outline: none;
+    font-size: 17px;
+}
+
+#password{
+    margin-top: 20px;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-bottom: 3px solid #a5a5a5;
+    color: #a5a5a5;
+    font-weight: 600;
+    outline: none;
+    font-size: 17px;
+}
+
+.forgot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    height: 48px;
+}
+
+.forgot a{
+    text-decoration: none;
+    color: #a5a5a5;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.forgot a:hover{
+    color: #757575;
+}
+
+.btn{
+    border-radius:0;
+}
+
+.card-footer{
+    padding: 0;
+    width: 100%;
+}
+
+.btn-1{
+    width: 50%;
+    border: none;
+    background-color: #dbdbdb;
+    font-size: 18px;
+    font-weight: 500;
+    color: #a5a5a5;
+    padding: 15px;
+    border-bottom-left-radius: 6px;
+}
+
+.btn-2{
+    width: 50%;
+    border: none;
+    background-color: #2d2246;
+    font-size: 18px;
+    font-weight: 500;
+    color: #dbdbdb;
+    padding: 15px;
+    border-bottom-right-radius: 6px;
+}
+
+@media only screen and (max-width:1000px){
+    .card{
+        width: 60vw;
+    }
+}
+
+@media only screen and (max-width:550px){
+    .card{
+        width: 90vw;
+    }
+}
