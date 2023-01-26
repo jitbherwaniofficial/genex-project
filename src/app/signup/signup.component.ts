@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
+import { FormBuilder, FormControl,FormGroup , Validators } from '@angular/forms';
 import { User } from '../services/user';
 import { UserService } from '../services/users.services';
+import { ConfirmPasswordValidator } from './confirmPassword.validator';
 
 @Component({
   selector: 'app-signup',
@@ -9,26 +10,31 @@ import { UserService } from '../services/users.services';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  // myForm!: FormGroup;
+  myForm!: FormGroup;
   gap = "gap"
 
-  myForm = new FormGroup({
-    email: new FormControl('',[Validators.required,Validators.email]),
-    password: new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(20)]),
-    confirmPassword: new FormControl('',Validators.required),
-    firstname : new FormControl('',Validators.required),
-    lastname : new FormControl('',Validators.required),
-    gender : new FormControl('',Validators.required),
-    country : new FormControl('India'),
-    isAccepted: new FormControl('',Validators.requiredTrue)
-  });
+  
 
   isValidFormSubmitted!: boolean;
-  user = new User()
-  constructor(private userServices : UserService) { }
+  user = new User();
+  constructor(private userServices : UserService,private fb: FormBuilder) { }
 
 
   ngOnInit(): void { 
+    this.myForm = this.fb.group({
+      email: ['',[Validators.required,Validators.email]],
+      password: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(20)]],
+      confirmPassword: ['',Validators.required],
+      firstname : ['',Validators.required],
+      lastname : ['',Validators.required],
+      gender : ['',Validators.required],
+      country : ['Country'],
+      isAccepted: ['',Validators.requiredTrue]
+    },
+    {
+      validators:ConfirmPasswordValidator("password","confirmPassword")
+    }
+    );
   }
 
   onSubmit(){
@@ -46,8 +52,11 @@ export class SignupComponent implements OnInit {
     this.user.country = this.myForm.get("country")?.value!;
     this.user.isAccepted = this.myForm.get("isAccepted")?.value;
 	  this.userServices.createUser(this.user);
+    this.myForm.reset({country:"Country"})
   }
 
-
-
+  
 }
+
+
+

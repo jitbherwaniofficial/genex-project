@@ -108,6 +108,8 @@
           >
             please confirm your password.
           </small>
+          <small class="text-danger" *ngIf="myForm.get('confirmPassword')?.hasError('confirmPasswordValidator')">Password and
+            Confirm Password didn't match. </small>
         </div>
         <div class="input-group mb-4 px-3 SHOW">
           <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
@@ -238,7 +240,7 @@
             aria-label="Default select example"
             formControlName="country"
           >
-            <option selected>India</option>
+            <option selected>Country</option>
             <option value="1">India</option>
             <option value="2">U.S.A</option>
             <option value="3">Germany</option>
