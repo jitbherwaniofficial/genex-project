@@ -1,7 +1,6 @@
 {
   "name": "genex-project-1",
   "version": "0.0.0",
-  "proxy":"",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

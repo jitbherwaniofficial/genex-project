@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://genex-api.onrender.com:10000',
+  apiUrl: 'https://genex-api.onrender.com',
 };
