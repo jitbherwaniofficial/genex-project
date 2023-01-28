@@ -1,7 +1,7 @@
 {
   "name": "genex-project-1",
   "version": "0.0.0",
-  "proxy":"https://genex-api.onrender.com/user",
+  "proxy":"",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
