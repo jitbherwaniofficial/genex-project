@@ -64,6 +64,15 @@ small{
     width: 100% !important;
 }
 
+.d-none{
+    display:none;
+}
+
+.pad{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
 @media only screen and (max-width:1630px){
 
     .background{

@@ -7,5 +7,6 @@ export class User {
     gender?: string;
     country?: string;
     isAccepted?: boolean | any;
+    isNewsAccepted?: boolean  | any;
         
 }

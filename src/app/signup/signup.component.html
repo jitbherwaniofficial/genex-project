@@ -4,6 +4,9 @@
     <div class="card-body">
       <h1>Responsive Registration Form</h1>
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div [ngClass]="className" class="pad" role="alert">
+          {{message}} <a routerLink="/login" class="text-primary" style="cursor: pointer;text-decoration: none;">Login here</a>
+        </div>
         <div class="input-group mb-4 px-3">
           <span class="input-group-text" id="basic-addon1"
             ><i class="fa-solid fa-envelope"></i
@@ -241,15 +244,15 @@
             formControlName="country"
           >
             <option selected>Country</option>
-            <option value="1">India</option>
-            <option value="2">U.S.A</option>
-            <option value="3">Germany</option>
-            <option value="4">Canada</option>
-            <option value="5">Ireland</option>
-            <option value="6">England</option>
-            <option value="7">Australia</option>
-            <option value="8">South Africa</option>
-            <option value="9">Turkey</option>
+            <option value="India">India</option>
+            <option value="U.S.A">U.S.A</option>
+            <option value="Germany">Germany</option>
+            <option value="Canada">Canada</option>
+            <option value="Ireland">Ireland</option>
+            <option value="England">England</option>
+            <option value="Australia">Australia</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Turkey">Turkey</option>
           </select>
         </div>
         <div class="form-check mt-4 mx-3">
@@ -281,11 +284,22 @@
             type="checkbox"
             value=""
             id="defaultCheck2"
-            formControlName="isAccepted"
+            formControlName="isNewsAccepted"
           />
           <label class="form-check-label" for="defaultCheck2">
             I want to receive the newsletter.
           </label>
+          <!-- <small
+            class="text-danger"
+            *ngIf="
+              myForm.get('isNewsAccepted')?.invalid &&
+              isValidFormSubmitted != null &&
+              !isValidFormSubmitted
+            "
+            [ngClass]="'error'"
+          >
+            please accept the news letter
+          </small> -->
         </div>
         <div class="mx-3">
           <button type="submit" class="btn mt-4 mb-4">Register</button>
