@@ -10,16 +10,16 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  headers= new HttpHeaders()
-  .set('content-type', 'application/json')
-  .set('Access-Control-Allow-Origin', '*');
+  // headers= new HttpHeaders()
+  // .set('content-type', 'application/json')
+  // .set('Access-Control-Allow-Origin', '*');
 
   signup(data:any):Observable<any>{
-    return this.http.post('https://genex-api.onrender.com/user/signup',data,{ 'headers': this.headers })
+    return this.http.post('/signup',data)
   }
 
   signin(data:any):Observable<any>{
-    return this.http.post('https://genex-api.onrender.com/user/login',data,{ 'headers': this.headers })
+    return this.http.post('/login',data,) //{ 'headers': this.headers }
   }
  
 }
