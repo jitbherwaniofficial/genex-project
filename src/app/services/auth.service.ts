@@ -12,18 +12,18 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  headers= new HttpHeaders()
-  .set('content-type', 'application/json')
-  .set('Access-Control-Allow-Origin', environment.ApiUrl);
+  // headers= new HttpHeaders()
+  // .set('content-type', 'application/json')
+  // .set('Access-Control-Allow-Origin', environment.ApiUrl);
 
 
 
   signup(data:any):Observable<any>{
-    return this.http.post<any>(`${environment.ApiUrl}}/user/signup`,data,{ 'headers': this.headers })
+    return this.http.post<any>(`${environment.ApiUrl}}/user/signup`,data,)
   }
 
   signin(data:any):Observable<any>{
-    return this.http.post<any>(`${environment.ApiUrl}/user/login`,data,{ 'headers': this.headers }) 
+    return this.http.post<any>(`${environment.ApiUrl}/user/login`,data,) 
   }
  
 }
