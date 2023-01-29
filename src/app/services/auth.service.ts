@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+// import { HttpHeaders } from '@angular/common/http';
+// import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +19,11 @@ export class AuthService {
 
 
   signup(data:any):Observable<any>{
-    return this.http.post<any>(`${environment.ApiUrl}}/user/signup`,data,)
+    return this.http.post<any>(`/user/signup`,data,)
   }
 
   signin(data:any):Observable<any>{
-    return this.http.post<any>(`${environment.ApiUrl}/user/login`,data,) 
+    return this.http.post<any>(`/user/login`,data,) 
   }
  
 }
