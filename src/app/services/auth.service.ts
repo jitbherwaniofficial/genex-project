@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +14,16 @@ export class AuthService {
 
   headers= new HttpHeaders()
   .set('content-type', 'application/json')
-  .set('Access-Control-Allow-Origin', environment.apiUrl);
+  .set('Access-Control-Allow-Origin', environment.ApiUrl);
 
 
 
   signup(data:any):Observable<any>{
-    return this.http.post<any>(`${environment.apiUrl}}/user/signup`,data,{ 'headers': this.headers })
+    return this.http.post<any>(`${environment.ApiUrl}}/user/signup`,data,{ 'headers': this.headers })
   }
 
   signin(data:any):Observable<any>{
-    return this.http.post<any>(`${environment.apiUrl}/user/login`,data,{ 'headers': this.headers }) 
+    return this.http.post<any>(`${environment.ApiUrl}/user/login`,data,{ 'headers': this.headers }) 
   }
  
 }
