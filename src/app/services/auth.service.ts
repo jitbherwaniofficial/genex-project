@@ -19,11 +19,11 @@ export class AuthService {
 
 
   signup(data:any):Observable<any>{
-    return this.http.post("https://genex-api.onrender.com/user/signup",data,)
+    return this.http.post("/user/signup",data,)
   }
 
   signin(data:any):Observable<any>{
-    return this.http.post("https://genex-api.onrender.com/user/login",data,) 
+    return this.http.post("/user/login",data,) 
   }
  
 }
