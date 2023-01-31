@@ -20,11 +20,11 @@ export class AuthService {
 
 
   signup(data:any):Observable<any>{
-    return this.http.post(`${environment.apiUrl}/user/signup`,data,{headers:this.headers})
+    return this.http.post(`${environment.apiUrl}/signup`,data,{headers:this.headers})
   }
 
   signin(data:any):Observable<any>{
-    return this.http.post(`${environment.apiUrl}/user/login`,data,{headers:this.headers}) 
+    return this.http.post(`${environment.apiUrl}/login`,data,{headers:this.headers}) 
   }
  
 }
